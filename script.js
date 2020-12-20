@@ -1,9 +1,9 @@
-const bookBtn = document.querySelector('.bookstack');
+const bookBtn = document.querySelector('.book-stack');
 
-book-stack.addEventListener('click', makeBooksFly);
+bookBtn.addEventListener('click', makeBooksFly);
 
 function makeBooksFly() {
-  
+  alert("Books!")
 }
 
 

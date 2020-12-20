@@ -20,7 +20,38 @@ h1 {
   text-align: center;
 }
 
-.bookstack {
+.click-me {
+  text-align: center;
+  margin-left: 150px;
+  margin-bottom: -30px;
+}
+
+.book-stack {
   font-size: 7em;
   text-align: center;
+  transform: scale(1);
+	animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.9);
+	}
+
+	70% {
+		transform: scale(1);
+	}
+
+	100% {
+		transform: scale(0.9);
+	}
+}
+
+.book-stack:hover,
+.book-stack:focus {
+  cursor: pointer;
+  transform: none;
+  animation: none;
+  text-decoration: none;
+  filter: brightness(110%);
 }
