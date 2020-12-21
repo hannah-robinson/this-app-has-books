@@ -25,14 +25,12 @@ h1 {
   text-align: center;
   margin-left: 150px;
   margin-bottom: -30px;
-  display: block;
 }
 
 .book-stack {
   font-size: 7em;
   text-align: center;
   animation: pulse 4s infinite;
-  display: block;
 }
 
 @keyframes pulse {
@@ -59,73 +57,66 @@ h1 {
 /* Changes after stack of books emoji is clicked */
 
 /* Add styling generic to all books */
-.book {
-  text-align: center;
+.book-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
 }
-.book::after { 
+.book { 
   font-size: 5em;
-  text-align: center;
   position: absolute;
   opacity: 0; 
 }
 
 /* Containers. Animate books along the X-axis */
-.book-0, .book-15 {
+.book-wrapper-0, .book-wrapper-15 {
   animation: xAxis-fly-left-1 5.2s linear; 
 }
-.book-1, .book-14  {
+.book-wrapper-1, .book-wrapper-14  {
   animation: xAxis-fly-right-1 4.8s linear; 
 }
-.book-2, .book-13  {
+.book-wrapper-2, .book-wrapper-13  {
   animation: xAxis-fly-left-2 4.9s linear; 
 }
-.book-3, .book-12  {
+.book-wrapper-3, .book-wrapper-12  {
   animation: xAxis-fly-right-2 4.6s linear; 
 }
-.book-4, .book-11  {
+.book-wrapper-4, .book-wrapper-11  {
   animation: xAxis-fly-left-3 5.1s linear; 
 }
-.book-5, .book-10  {
+.book-wrapper-5, .book-wrapper-10  {
   animation: xAxis-fly-right-3 3.7s linear; 
 }
-.book-6, .book-9  {
+.book-wrapper-6, .book-wrapper-9  {
   animation: xAxis-fly-left-4 5.3s linear; 
 }
-.book-7, .book-8  {
+.book-wrapper-7, .book-wrapper-8  {
   animation: xAxis-fly-right-4 5s linear; 
 }
 
 /* Render books, and animate along Y-axis */
-.book-0::after, .book-15::after {
-  content: "📕";
+.book-0, .book-15 {
   animation: yAxis-fly-left-1 3.9s cubic-bezier(0.33, 0, 0.66, 0.33); 
 }
-.book-1::after, .book-14::after {
-  content: "📘";
+.book-1, .book-14 {
   animation: yAxis-fly-right-1 4.1s cubic-bezier(0.33, 0, 0.66, 0.33); 
 }
-.book-2::after, .book-13::after {
-  content: "📖";
+.book-2, .book-13 {
   animation: yAxis-fly-left-2 3.5s cubic-bezier(0.33, 0, 0.66, 0.33); 
 }
-.book-3::after, .book-12::after {
-  content: "📗";
+.book-3, .book-12 {
   animation: yAxis-fly-right-2 3.8s cubic-bezier(0.33, 0, 0.66, 0.33); 
 }
-.book-4::after, .book-11::after {
-  content: "📙";
+.book-4, .book-11 {
   animation: yAxis-fly-left-3 4.2s cubic-bezier(0.33, 0, 0.66, 0.33); 
 }
-.book-5::after, .book-10::after {
-  content: "📓";
+.book-5, .book-10 {
   animation: yAxis-fly-right-3 3.7s cubic-bezier(0.33, 0, 0.66, 0.33); 
 }
-.book-6::after, .book-9::after {
-  content: "📒";
+.book-6, .book-9 {
   animation: yAxis-fly-left-4 3.3s cubic-bezier(0.33, 0, 0.66, 0.33); 
 }
-.book-7::after, .book-8::after {
-  content: "📔";
+.book-7, .book-8 {
   animation: yAxis-fly-right-4 4s cubic-bezier(0.33, 0, 0.66, 0.33); 
 }
 
