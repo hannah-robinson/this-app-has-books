@@ -31,7 +31,6 @@ h1 {
 .book-stack {
   font-size: 7em;
   text-align: center;
-  transform: scale(1);
   animation: pulse 4s infinite;
   display: block;
 }
@@ -60,6 +59,9 @@ h1 {
 /* Changes after stack of books emoji is clicked */
 
 /* Add styling generic to all books */
+.book {
+  text-align: center;
+}
 .book::after { 
   font-size: 5em;
   text-align: center;
@@ -69,82 +71,83 @@ h1 {
 
 /* Containers. Animate books along the X-axis */
 .book-0, .book-15 {
-  animation: xAxis-fly-left 4s ease-in 1; 
+  animation: xAxis-fly-left-1 5.2s linear; 
 }
 .book-1, .book-14  {
-  animation: xAxis-fly-right 4s ease-in 1; 
+  animation: xAxis-fly-right-1 4.8s linear; 
 }
 .book-2, .book-13  {
-  animation: xAxis-fly-left 4s ease-in 1; 
+  animation: xAxis-fly-left-2 4.9s linear; 
 }
 .book-3, .book-12  {
-  animation: xAxis-fly-right 4s ease-in 1; 
+  animation: xAxis-fly-right-2 4.6s linear; 
 }
 .book-4, .book-11  {
-  animation: xAxis-fly-left 4s ease-in 1; 
+  animation: xAxis-fly-left-3 5.1s linear; 
 }
 .book-5, .book-10  {
-  animation: xAxis-fly-right 4s ease-in 1; 
+  animation: xAxis-fly-right-3 3.7s linear; 
 }
 .book-6, .book-9  {
-  animation: xAxis-fly-left 4s ease-in 1; 
+  animation: xAxis-fly-left-4 5.3s linear; 
 }
 .book-7, .book-8  {
-  animation: xAxis-fly-right 4s ease-in 1; 
+  animation: xAxis-fly-right-4 5s linear; 
 }
 
 /* Render books, and animate along Y-axis */
 .book-0::after, .book-15::after {
   content: "📕";
-  animation: yAxis-fly-left 4s cubic-bezier(0.33, 0, 0.66, 0.33) 1; 
+  animation: yAxis-fly-left-1 3.9s cubic-bezier(0.33, 0, 0.66, 0.33); 
 }
 .book-1::after, .book-14::after {
   content: "📘";
-  animation: yAxis-fly-right 4s cubic-bezier(0.33, 0, 0.66, 0.33) 1; 
+  animation: yAxis-fly-right-1 4.1s cubic-bezier(0.33, 0, 0.66, 0.33); 
 }
 .book-2::after, .book-13::after {
   content: "📖";
-  animation: yAxis-fly-left 4s cubic-bezier(0.33, 0, 0.66, 0.33) 1; 
+  animation: yAxis-fly-left-2 3.5s cubic-bezier(0.33, 0, 0.66, 0.33); 
 }
 .book-3::after, .book-12::after {
   content: "📗";
-  animation: yAxis-fly-right 4s cubic-bezier(0.33, 0, 0.66, 0.33) 1; 
+  animation: yAxis-fly-right-2 3.8s cubic-bezier(0.33, 0, 0.66, 0.33); 
 }
 .book-4::after, .book-11::after {
   content: "📙";
-  animation: yAxis-fly-left 4s cubic-bezier(0.33, 0, 0.66, 0.33) 1; 
+  animation: yAxis-fly-left-3 4.2s cubic-bezier(0.33, 0, 0.66, 0.33); 
 }
 .book-5::after, .book-10::after {
   content: "📓";
-  animation: yAxis-fly-right 4s cubic-bezier(0.33, 0, 0.66, 0.33) 1; 
+  animation: yAxis-fly-right-3 3.7s cubic-bezier(0.33, 0, 0.66, 0.33); 
 }
 .book-6::after, .book-9::after {
   content: "📒";
-  animation: yAxis-fly-left 4s cubic-bezier(0.33, 0, 0.66, 0.33) 1; 
+  animation: yAxis-fly-left-4 3.3s cubic-bezier(0.33, 0, 0.66, 0.33); 
 }
 .book-7::after, .book-8::after {
   content: "📔";
-  animation: yAxis-fly-right 4s cubic-bezier(0.33, 0, 0.66, 0.33) 1; 
+  animation: yAxis-fly-right-4 4s cubic-bezier(0.33, 0, 0.66, 0.33); 
 }
 
-@keyframes xAxis-fly-left {
+/* Keyframes Vector 1 */
+@keyframes xAxis-fly-left-1 {
   20% {
-    animation-timing-function: ease-in;
-    transform: translateX(-300px);
+    animation-timing-function: linear;
+    transform: translateX(-100px);
   }
   100% {
-    animation-timing-function: ease-in;
+    animation-timing-function: linear;
     transform: translateX(-900px);
   }
 }
 
-@keyframes yAxis-fly-left {
+@keyframes yAxis-fly-left-1 {
   0% {
     opacity: 100;
   }
   20% {
-    animation-timing-function: ease-out;
-    transform: translateY(-600px);
+    animation-timing-function: ease-in;
+    transform: translateY(-500px);
   }
   100% {
     animation-timing-function: cubic-bezier(0.33, 0, 0.66, 0.33);
@@ -153,23 +156,105 @@ h1 {
   }
 }
 
-@keyframes xAxis-fly-right {
+/* Keyframes Vector 2 */
+@keyframes xAxis-fly-right-1 {
   20% {
-    animation-timing-function: ease-in;
-    transform: translateX(300px);
+    animation-timing-function: linear;
+    transform: translateX(100px);
   }
   100% {
-    animation-timing-function: ease-in;
+    animation-timing-function: linear;
     transform: translateX(900px);
   }
 }
 
-@keyframes yAxis-fly-right {
+@keyframes yAxis-fly-right-1 {
   0% {
     opacity: 100;
   }
   20% {
-    animation-timing-function: ease-out;
+    animation-timing-function: ease-in;
+    transform: translateY(-500px);
+  }
+  100% {
+    animation-timing-function: cubic-bezier(0.33, 0, 0.66, 0.33);
+    transform: translateY(1000px);
+    opacity: 100;
+  }
+}
+
+/* Keyframes Vector 3 */
+@keyframes xAxis-fly-left-2 {
+  20% {
+    animation-timing-function: linear;
+    transform: translateX(-50px);
+  }
+  100% {
+    animation-timing-function: linear;
+    transform: translateX(-1000px);
+  }
+}
+
+@keyframes yAxis-fly-left-2 {
+  0% {
+    opacity: 100;
+  }
+  20% {
+    animation-timing-function: ease-in;
+    transform: translateY(-400px);
+  }
+  100% {
+    animation-timing-function: cubic-bezier(0.33, 0, 0.66, 0.33);
+    transform: translateY(1000px);
+    opacity: 100;
+  }
+}
+
+/* Keyframes Vector 4 */
+@keyframes xAxis-fly-right-2 {
+  20% {
+    animation-timing-function: linear;
+    transform: translateX(50px);
+  }
+  100% {
+    animation-timing-function: linear;
+    transform: translateX(900px);
+  }
+}
+
+@keyframes yAxis-fly-right-2 {
+  0% {
+    opacity: 100;
+  }
+  20% {
+    animation-timing-function: ease-in;
+    transform: translateY(-400px);
+  }
+  100% {
+    animation-timing-function: cubic-bezier(0.33, 0, 0.66, 0.33);
+    transform: translateY(1000px);
+    opacity: 100;
+  }
+}
+
+/* Keyframes Vector 5 */
+@keyframes xAxis-fly-left-3 {
+  20% {
+    animation-timing-function: linear;
+    transform: translateX(-300px);
+  }
+  100% {
+    animation-timing-function: linear;
+    transform: translateX(-1000px);
+  }
+}
+
+@keyframes yAxis-fly-left-3 {
+  0% {
+    opacity: 100;
+  }
+  20% {
+    animation-timing-function: ease-in;
     transform: translateY(-600px);
   }
   100% {
@@ -178,3 +263,31 @@ h1 {
     opacity: 100;
   }
 }
+
+/* Keyframes Vector 4 */
+@keyframes xAxis-fly-right-3 {
+  20% {
+    animation-timing-function: linear;
+    transform: translateX(-400px);
+  }
+  100% {
+    animation-timing-function: linear;
+    transform: translateX(-1000px);
+  }
+}
+
+@keyframes yAxis-fly-right-3 {
+  0% {
+    opacity: 100;
+  }
+  20% {
+    animation-timing-function: ease-in;
+    transform: translateY(-300px);
+  }
+  100% {
+    animation-timing-function: cubic-bezier(0.33, 0, 0.66, 0.33);
+    transform: translateY(1000px);
+    opacity: 100;
+  }
+}
+
