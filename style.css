@@ -1,3 +1,4 @@
+/* Page styling before click */
 html {
   box-sizing: border-box;
   font-family: Helvetica, Arial, sans-serif;
@@ -24,13 +25,15 @@ h1 {
   text-align: center;
   margin-left: 150px;
   margin-bottom: -30px;
+  display: block;
 }
 
 .book-stack {
   font-size: 7em;
   text-align: center;
   transform: scale(1);
-	animation: pulse 2s infinite;
+  animation: pulse 2s infinite;
+  display: block;
 }
 
 @keyframes pulse {
@@ -54,4 +57,93 @@ h1 {
   animation: none;
   text-decoration: none;
   filter: brightness(110%);
+}
+
+/* Changes after stack of books is clicked */
+
+/* .book {
+  Container. Animate along the X-axis
+  animation: xAxis-fly-left 3s ease-in 5; 
+} */
+
+.book::after {
+  /* Render book, and animate along Y-axis */
+  font-size: 5em;
+  text-align: center;
+  position: absolute;
+  opacity: 0; 
+}
+
+.book-1 {
+  /* Container. Animate along the X-axis */
+  animation: xAxis-fly-left 3s ease-in 5; 
+}
+
+.book-1::after {
+  /* Render book, and animate along Y-axis */
+  content: "📕";
+  animation: yAxis-fly-left 3s cubic-bezier(0.33, 0, 0.66, 0.33) 5; 
+}
+
+.book-2 {
+  /* Container. Animate along the X-axis */
+  animation: xAxis-fly-right 3s ease-in 5; 
+}
+
+.book-2::after {
+  /* Render book and animate along Y-axis */
+  content: "📘";
+  animation: yAxis-fly-right 3s cubic-bezier(0.33, 0, 0.66, 0.33) 5; 
+}
+
+@keyframes xAxis-fly-left {
+  20% {
+    animation-timing-function: ease-in;
+    transform: translateX(-300px);
+  }
+  100% {
+    animation-timing-function: ease-in;
+    transform: translateX(-900px);
+  }
+}
+
+@keyframes yAxis-fly-left {
+  0% {
+    opacity: 100;
+  }
+  20% {
+    animation-timing-function: ease-out;
+    transform: translateY(-600px);
+  }
+  100% {
+    animation-timing-function: cubic-bezier(0.33, 0, 0.66, 0.33);
+    transform: translateY(1000px);
+    opacity: 100;
+  }
+}
+
+@keyframes xAxis-fly-right {
+  20% {
+    animation-timing-function: ease-in;
+    transform: translateX(300px);
+  }
+  100% {
+    animation-timing-function: ease-in;
+    transform: translateX(900px);
+  }
+}
+
+@keyframes yAxis-fly-right {
+  0% {
+    opacity: 100;
+  }
+  20% {
+    animation-timing-function: ease-out;
+    transform: translateY(-600px);
+  }
+  100% {
+    animation-timing-function: cubic-bezier(0.33, 0, 0.66, 0.33);
+    transform: translateY(1000px);
+    opacity: 100;
+  }
 }
