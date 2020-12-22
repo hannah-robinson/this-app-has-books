@@ -3,11 +3,11 @@ const clickMe = document.querySelector('.click-me');
 const container = document.querySelector('.container');
 const text = document.querySelector('h1');
 
-bookBtn.addEventListener('click', makeBooksFly);
+container.addEventListener('click', makeBooksFly);
 
 function makeBooksFly() {
   clickMe.remove();
-  bookBtn.removeEventListener('click', makeBooksFly);
+  container.removeEventListener('click', makeBooksFly);
   bookBtn.remove();
   text.style.color = 'rgb(184, 184, 184)';
 
