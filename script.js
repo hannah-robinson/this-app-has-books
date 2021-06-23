@@ -170,5 +170,5 @@ function makeBooksFly() {
   setTimeout(() => {
     text.innerHTML = 'This app <em>had</em> books.';
     text.style.color = '#000';
-  }, 7000);  
+  }, 6000);  
 }
