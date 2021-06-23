@@ -282,3 +282,23 @@ h1 {
   }
 }
 
+@media (max-width: 576px) {
+
+  h1 {
+  font-size: 2em;
+  }
+
+  .click-me {
+  margin-left: 150px;
+  margin-bottom: -30px;
+  }
+
+  .book-stack {
+    font-size: 5em;
+  }
+
+  .book { 
+    font-size: 2em;
+  }
+}
+
