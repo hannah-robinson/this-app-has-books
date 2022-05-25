@@ -2,7 +2,7 @@
 
 ## Screenshot of the app.
 
-(Clicking here won't work. You need to [visit the app](https://hannah-robinson.github.io/this-app-has-books/) to be able to click.)
+(Note: clicking the image below won't work. You need to [visit the app](https://hannah-robinson.github.io/this-app-has-books/) to be able to click.)
 
 ![Screenshot of app](https://github.com/hannah-robinson/this-app-has-books/blob/main/img/books-og.jpg)
 
